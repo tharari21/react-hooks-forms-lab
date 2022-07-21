@@ -34,6 +34,7 @@ function ShoppingList({ items, onItemFormSubmit }) {
     <div className="ShoppingList">
       <ItemForm onItemFormSubmit={onItemFormSubmit} />
       <Filter
+        search={searchValue}
         onCategoryChange={handleCategoryChange}
         onSearchChange={handleSearchInputChange}
       />

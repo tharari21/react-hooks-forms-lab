@@ -10,9 +10,10 @@ function ItemForm({ onItemFormSubmit }) {
     event.preventDefault();
     const newItem = {
       id: uuid(),
-      name: event.target.name,
-      category: event.target.category,
+      name: event.target.name.value,
+      category: event.target.category.value,
     };
+    console.log("new item", newItem);
     onItemFormSubmit(newItem);
   };
   const handleChange = (event) => {
@@ -27,7 +28,7 @@ function ItemForm({ onItemFormSubmit }) {
 
       <label>
         Category:
-        <select name="category" onChange={handleChange}>
+        <select name="category" onChange={handleChange} >
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>
           <option value="Dessert">Dessert</option>
